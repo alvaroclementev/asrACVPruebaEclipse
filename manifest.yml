@@ -2,7 +2,7 @@
 applications:
  - name: asrACVPruebaEclipse
    host: asrACVPruebaEclipse
-   path: target/GetStartedTomcat.war
+   path: GetStartedTomcat.war
    memory: 256M
    instances: 1
    buildpack: java_buildpack
