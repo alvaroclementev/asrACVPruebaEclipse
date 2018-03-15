@@ -79,7 +79,7 @@
           <version>2.6</version>
           <configuration>
             <failOnMissingWebXml>false</failOnMissingWebXml>
-            <warName>GetStartedTomcat</warName>
+            <warName>asrACVPruebaEclipse</warName>
           </configuration>
         </plugin>
       </plugins>
