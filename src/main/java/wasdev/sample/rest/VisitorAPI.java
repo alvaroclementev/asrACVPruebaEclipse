@@ -29,6 +29,7 @@ import javax.ws.rs.core.Application;
 import com.google.gson.Gson;
 
 import wasdev.sample.Visitor;
+import wasdev.sample.services.Traductor;
 import wasdev.sample.store.VisitorStore;
 import wasdev.sample.store.VisitorStoreFactory;
 
@@ -101,8 +102,12 @@ public class VisitorAPI extends Application {
       if(store == null) {
     	  return String.format("Hello %s!", visitor.getName());
       }
+      //Translate visitor's name before persisting it
+      String nombre = visitor.getName();
+      String nombreEnglish = Traductor.translate(nombre);
+      visitor.setName(nombreEnglish);
       store.persist(visitor);
-      return String.format("Hello %s! I've added you to the database.", visitor.getName());
+      return String.format("Hello %s! I've added you to the database (translated to %s).", nombre, nombreEnglish);
 
     }
 
